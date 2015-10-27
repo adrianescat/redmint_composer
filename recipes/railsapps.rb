@@ -20,7 +20,7 @@ when "4"
     prefs[:apps4] = multiple_choice "Build a starter application?",
       [["Build a RailsApps example application", "railsapps"],
       ["Contributed applications (none available)", "contributed_app"],
-      ["Custom application (experimental)", "none"]] unless prefs.has_key? :apps4
+      ["Redmint proyect", "none"]] unless prefs.has_key? :apps4
     case prefs[:apps4]
       when 'railsapps'
         case Rails::VERSION::MINOR.to_s

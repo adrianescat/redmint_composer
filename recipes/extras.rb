@@ -106,6 +106,10 @@ if prefs[:pry]
   say_wizard "recipe adding pry-rails gem"
   add_gem 'pry-rails', :group => [:development, :test]
   add_gem 'pry-rescue', :group => [:development, :test]
+  add_gem 'pry'
+  add_gem 'pry-byebug'
+  add_gem 'pry-remote'
+  add_gem 'pry-stack_explorer'
 end
 
 ## Rubocop
@@ -206,6 +210,37 @@ if prefs[:github]
   end
 end
 
+## REDMINT DEFAULT GEMS
+prefs[:redmint_gems] = true if config['redmint_gems']
+if prefs[:redmint_gems]
+  say_wizard "recipe adding default redmint gems"
+  add_gem 'zeus'
+  add_gem 'awesome_print'
+  add_gem 'yaml_db'
+  add_gem 'kaminari'
+  add_gem 'ransack'
+  add_gem 'redis'
+  add_gem 'draper'
+  add_gem "i18n-js", ">= 3.0.0.rc8"
+  add_gem 'mini_magick'
+  add_gem 'carrierwave'
+  add_gem 'carrierwave_backgrounder'
+  add_gem 'cancancan', '~> 1.10'
+  add_gem "rolify"
+  add_gem 'sinatra', '>= 1.3.0', :require => nil
+  add_gem 'sidekiq'
+  add_gem 'sidetiq'
+  add_gem 'cocoon'
+  add_gem "font-awesome-rails"
+  add_gem 'wicked'
+  add_gem 'axlsx_rails'
+  add_gem 'letter_opener', :group => [:development]
+  add_gem 'foreman', "0.63.0", :group => [:development, :production]
+  add_gem 'stackmint', git: "git@gitlab.redmintlabs.com:redmint/stackmint.git", :group => [:development, :production]
+  add_gem 'puma', :group => [:development, :production]
+  add_gem 'rollbar', '~> 2.4.0', :group => [:development, :production]
+end
+
 __END__
 
 name: extras
@@ -238,7 +273,10 @@ config:
       prompt: Improve error reporting with 'better_errors' during development?
   - pry:
       type: boolean
-      prompt: Use 'pry' as console replacement during development and test?
+      prompt: Use 'pry' as console replacement?
   - rubocop:
       type: boolean
       prompt: Use 'rubocop' to ensure that your code conforms to the Ruby style guide?
+  - redmint_gems:
+      type: boolean
+      prompt: Add default redmint gems?
