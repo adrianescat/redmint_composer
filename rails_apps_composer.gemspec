@@ -3,17 +3,17 @@ $:.push File.expand_path("../lib", __FILE__)
 require File.dirname(__FILE__) + "/version"
 
 Gem::Specification.new do |s|
-  s.name        = "rails_apps_composer"
+  s.name        = "redmint_composer"
   s.version     = RailsWizard::VERSION
   s.platform    = Gem::Platform::RUBY
-  s.authors     = ["Daniel Kehoe"]
+  s.authors     = ["Daniel Kehoe", "Adrián Escat"]
   s.email       = ["daniel@danielkehoe.com"]
-  s.homepage    = "http://github.com/RailsApps/rails_apps_composer"
+  s.homepage    = "https://github.com/adrianescat/redmint_composer"
   s.summary     = %q{A version of the RailsWizard gem with custom recipes for Rails starter apps.}
   s.description = %q{A gem with recipes to create Rails application templates you can use to generate Rails starter apps.}
   s.license     = 'MIT'
 
-  s.rubyforge_project = "rails_apps_composer"
+  s.rubyforge_project = "redmint_composer"
 
   s.add_dependency "i18n", '~> 0.6'
   s.add_dependency "activesupport", '~> 4.0'
