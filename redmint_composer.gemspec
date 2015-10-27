@@ -4,7 +4,7 @@ require File.dirname(__FILE__) + "/version"
 
 Gem::Specification.new do |s|
   s.name        = "redmint_composer"
-  s.version     = 1
+  s.version     = 2
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Daniel Kehoe", "Adrián Escat"]
   s.email       = ["daniel@danielkehoe.com"]
