@@ -22,7 +22,7 @@ stage_two do
   generate 'layout:navigation -f'
   ### GIT ###
   git :add => '-A' if prefer :git, true
-  git :commit => '-qm "rails_apps_composer: add pages"' if prefer :git, true
+  git :commit => '-qm "redmint_composer: add pages"' if prefer :git, true
 end
 
 stage_four do
@@ -77,7 +77,7 @@ stage_four do
   end
   ### GIT ###
   git :add => '-A' if prefer :git, true
-  git :commit => '-qm "rails_apps_composer: add Bootstrap page layouts"' if prefer :git, true
+  git :commit => '-qm "redmint_composer: add Bootstrap page layouts"' if prefer :git, true
 end
 
 __END__

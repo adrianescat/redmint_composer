@@ -14,7 +14,7 @@ CLONE_APP_REPOSITORIES_SCRIPT = <<BASH
   repositories=`cat repo-list`
   for repo in $repositories
   do
-    if test $repo != rails_apps_composer; then
+    if test $repo != redmint_composer; then
       echo $repo:
       if test -d $repo; then :; else
         (
@@ -31,7 +31,7 @@ BASH
 
 =begin
 # Utilities:
-rails_apps_composer
+redmint_composer
 rails-composer
 
 # Obsolete Rails 3 apps:
@@ -51,7 +51,7 @@ rails-stripe-membership-saas
 CREATE_REPOSITORY_LIST_SCRIPT = <<BASH
 # Create the repository list (keep utilities first):
   cat > repo-list <<HERE
-rails_apps_composer
+redmint_composer
 rails-composer
 rails-omniauth
 HERE
@@ -83,17 +83,17 @@ GENERATE_APPS_SCRIPT = <<BASH
   for repo in $repositories
   do
 # Keep space between: to avoid the (( builtin.
-    if ( (test $repo = rails_apps_composer) ||
+    if ( (test $repo = redmint_composer) ||
          (test $repo = rails-composer     ) ); then :; else
       echo $repo:
       (
         set -x # xtrace
 # On Mac OS X (& NetBSD), 'rm' lacks --force and --recursive (as spelled-out options).
         rm -rf $directory/$repo
-        rails_apps_composer new $directory/$repo --quiet --verbose\\
+        redmint_composer new $directory/$repo --quiet --verbose\\
         --recipes=`echo $repo | sed s/-/_/g`_testing_recipe railsapps\\
-        --recipe-dirs=rails_apps_composer/megatest/config\\
-           --defaults=rails_apps_composer/megatest/config/$repo.yml
+        --recipe-dirs=redmint_composer/megatest/config\\
+           --defaults=redmint_composer/megatest/config/$repo.yml
       )
     fi
   done
@@ -127,7 +127,7 @@ CAT
   repositories=`cat repo-list`
   for repo in $repositories
   do
-    if ( (test $repo = rails_apps_composer) ||
+    if ( (test $repo = redmint_composer) ||
          (test $repo = rails-composer     ) ); then :; else
       echo
       echo $directory/$repo:
@@ -161,7 +161,7 @@ MIGRATE_APP_DATABASES_SCRIPT = <<BASH
   repositories=`cat repo-list`
   for repo in $repositories
   do
-    if ( (test $repo = rails_apps_composer) ||
+    if ( (test $repo = redmint_composer) ||
          (test $repo = rails-composer     ) ); then :; else
       echo
       (
@@ -256,7 +256,7 @@ TEST_APPS_SCRIPT = <<BASH
   repositories=`cat repo-list`
   for repo in $repositories
   do
-    if ( (test $repo = rails_apps_composer) ||
+    if ( (test $repo = redmint_composer) ||
          (test $repo = rails-composer     ) ); then :; else
       (
         echo $directory/$repo:

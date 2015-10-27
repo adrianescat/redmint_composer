@@ -164,7 +164,7 @@ end
 stage_three do
   ### GIT ###
   git :add => '-A' if prefer :git, true
-  git :commit => '-qm "rails_apps_composer: prepare for deployment"' if prefer :git, true
+  git :commit => '-qm "redmint_composer: prepare for deployment"' if prefer :git, true
 end
 
 __END__

@@ -2,7 +2,7 @@ require 'bundler'
 Bundler.setup :development
 
 require 'mg'
-MG.new "rails_apps_composer.gemspec"
+MG.new "redmint_composer.gemspec"
 
 require 'rspec/core/rake_task'
 
@@ -174,7 +174,7 @@ desc 'Run the megatest'
 task :megatest do
 
 # In order to use Rails 3, you may need to adjust the "activesupport" line in
-# rails_apps_composer.gemspec. Currently, rails_apps_composer seems not to
+# redmint_composer.gemspec. Currently, redmint_composer seems not to
 # support Rails 3.
 
 # "set -e" means "errexit".
@@ -183,7 +183,7 @@ task :megatest do
 (
 set -e
 bundle update activesupport
-gem uninstall rails_apps_composer -x
+gem uninstall redmint_composer -x
 bundle exec rake reinstall
 rm -rf ../generated
 bundle exec rake mega:test --trace
@@ -202,10 +202,10 @@ task :print do
   puts RailsWizard::Template.new(recipes).compile
 end
 
-desc "uninstall rails_apps_composer gem and install a new version"
+desc "uninstall redmint_composer gem and install a new version"
 task :reinstall do
   Rake::Task['clobber'].invoke
   Rake::Task['gem'].invoke
   Rake::Task['gem:install'].invoke
-  puts "installed new rails_apps_composer #{RailsWizard::VERSION}"
+  puts "installed new redmint_composer #{RailsWizard::VERSION}"
 end

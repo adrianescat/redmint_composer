@@ -21,7 +21,7 @@ stage_two do
   end
   ### GIT
   git :add => '-A' if prefer :git, true
-  git :commit => %Q(-qm "rails_apps_composer: installed #{prefs[:admin]}") if prefer :git, true
+  git :commit => %Q(-qm "redmint_composer: installed #{prefs[:admin]}") if prefer :git, true
 end
 
 __END__

@@ -142,7 +142,7 @@ FILE
   end
   ### GIT ###
   git :add => '-A' if prefer :git, true
-  git :commit => '-qm "rails_apps_composer: set up database"' if prefer :git, true
+  git :commit => '-qm "redmint_composer: set up database"' if prefer :git, true
   ### FRONTEND (must run after database migrations) ###
   # generate Devise views with appropriate styling
   if prefer :authentication, 'devise'
@@ -165,7 +165,7 @@ FILE
   end
   ### GIT ###
   git :add => '-A' if prefer :git, true
-  git :commit => '-qm "rails_apps_composer: navigation links"' if prefer :git, true
+  git :commit => '-qm "redmint_composer: navigation links"' if prefer :git, true
 end
 
 __END__

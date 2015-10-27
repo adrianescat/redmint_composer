@@ -170,7 +170,7 @@ stage_four do
     gsub_file 'Gemfile', /.*gem 'haml2slim'\n/, "\n"
     gsub_file 'Gemfile', /.*gem 'html2haml'\n/, "\n"
   end
-  # remove gems and files used to assist rails_apps_composer
+  # remove gems and files used to assist redmint_composer
   gsub_file 'Gemfile', /.*gem 'rails_apps_pages'\n/, ''
   gsub_file 'Gemfile', /.*gem 'rails_apps_testing'\n/, ''
   remove_file 'config/railscomposer.yml'
@@ -185,7 +185,7 @@ stage_four do
   gsub_file 'config/routes.rb', /\n^\s*\n/, "\n"
   # GIT
   git :add => '-A' if prefer :git, true
-  git :commit => '-qm "rails_apps_composer: extras"' if prefer :git, true
+  git :commit => '-qm "redmint_composer: extras"' if prefer :git, true
 end
 
 ## GITHUB

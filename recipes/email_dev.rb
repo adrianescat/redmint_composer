@@ -36,7 +36,7 @@ RUBY
     end
     ### GIT
     git :add => '-A' if prefer :git, true
-    git :commit => '-qm "rails_apps_composer: set up mailcatcher for development"' if prefer :git, true
+    git :commit => '-qm "redmint_composer: set up mailcatcher for development"' if prefer :git, true
   end
   if prefs[:mail_view]
     say_wizard "recipe installing mail_view"
@@ -68,7 +68,7 @@ RUBY
     inject_into_file 'config/routes.rb', "mount MailPreview => 'mail_view' if Rails.env.development?", :before => "end"
     ### GIT
     git :add => '-A' if prefer :git, true
-    git :commit => '-qm "rails_apps_composer: set up mail_view for development"' if prefer :git, true
+    git :commit => '-qm "redmint_composer: set up mail_view for development"' if prefer :git, true
   end
 end
 

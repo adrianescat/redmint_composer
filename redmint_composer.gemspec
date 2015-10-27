@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.email       = ["daniel@danielkehoe.com"]
   s.homepage    = "https://github.com/adrianescat/redmint_composer"
   s.summary     = %q{A version of the RailsWizard gem with custom recipes for Rails starter apps.}
-  s.description = %q{A gem with recipes to create Rails application templates you can use to generate Rails starter apps.}
+  s.description = %q{A gem with recipes to create Rails application templates you can use to generate Rails starter apps. FORK of rails_app_composer gem}
   s.license     = 'MIT'
 
   s.rubyforge_project = "redmint_composer"
@@ -24,6 +24,6 @@ Gem::Specification.new do |s|
 
   s.files         = Dir["lib/**/*.rb", "recipes/*.rb", "README.textile", "version.rb", "templates/*"]
   s.test_files    = Dir["spec/**/*"]
-  s.executables   = ["rails_apps_composer"]
+  s.executables   = ["redmint_composer"]
   s.require_paths = ["lib"]
 end

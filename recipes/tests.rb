@@ -12,7 +12,7 @@ stage_two do
     run 'bundle exec guard init'
   end
   git :add => '-A' if prefer :git, true
-  git :commit => '-qm "rails_apps_composer: testing framework"' if prefer :git, true
+  git :commit => '-qm "redmint_composer: testing framework"' if prefer :git, true
 end
 
 stage_three do

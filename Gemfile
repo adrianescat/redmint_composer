@@ -1,4 +1,4 @@
 source "https://rubygems.org"
 
-# Specify your gem's dependencies in rails_apps_composer.gemspec
+# Specify your gem's dependencies in redmint_composer.gemspec
 gemspec

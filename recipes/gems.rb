@@ -132,7 +132,7 @@ end
 
 ## Git
 git :add => '-A' if prefer :git, true
-git :commit => '-qm "rails_apps_composer: Gemfile"' if prefer :git, true
+git :commit => '-qm "redmint_composer: Gemfile"' if prefer :git, true
 
 ### CREATE DATABASE ###
 stage_two do
@@ -190,7 +190,7 @@ stage_two do
     run 'bundle exec rake db:create:all'
     ## Git
     git :add => '-A' if prefer :git, true
-    git :commit => '-qm "rails_apps_composer: create database"' if prefer :git, true
+    git :commit => '-qm "redmint_composer: create database"' if prefer :git, true
   end
 end
 
@@ -260,7 +260,7 @@ FILE
   end
   ## Git
   git :add => '-A' if prefer :git, true
-  git :commit => '-qm "rails_apps_composer: generators"' if prefer :git, true
+  git :commit => '-qm "redmint_composer: generators"' if prefer :git, true
 end
 
 __END__

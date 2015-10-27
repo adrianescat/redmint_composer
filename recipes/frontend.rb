@@ -19,7 +19,7 @@ stage_two do
 
   ### GIT ###
   git :add => '-A' if prefer :git, true
-  git :commit => '-qm "rails_apps_composer: front-end framework"' if prefer :git, true
+  git :commit => '-qm "redmint_composer: front-end framework"' if prefer :git, true
 end
 
 __END__

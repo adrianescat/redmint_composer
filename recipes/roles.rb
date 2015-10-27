@@ -26,7 +26,7 @@ RUBY
   end
   ### GIT ###
   git :add => '-A' if prefer :git, true
-  git :commit => '-qm "rails_apps_composer: add roles to a User model"' if prefer :git, true
+  git :commit => '-qm "redmint_composer: add roles to a User model"' if prefer :git, true
 end
 
 __END__
