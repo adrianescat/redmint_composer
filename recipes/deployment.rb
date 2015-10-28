@@ -49,7 +49,7 @@ TEXT
         append_file 'app.json' do <<-TEXT
     "GMAIL_USERNAME": {
       "description": "Your Gmail address for sending mail.",
-      "value": "user@example.com",
+      "value": "admin@redmintlabs.com",
       "required": false
     },
     "GMAIL_PASSWORD": {
@@ -63,7 +63,7 @@ TEXT
         append_file 'app.json' do <<-TEXT
     "SENDGRID_USERNAME": {
       "description": "Your SendGrid address for sending mail.",
-      "value": "user@example.com",
+      "value": "admin@redmintlabs.com",
       "required": false
     },
     "SENDGRID_PASSWORD": {
@@ -77,7 +77,7 @@ TEXT
         append_file 'app.json' do <<-TEXT
     "MANDRILL_USERNAME": {
       "description": "Your Mandrill address for sending mail.",
-      "value": "user@example.com",
+      "value": "admin@redmintlabs.com",
       "required": false
     },
     "MANDRILL_APIKEY": {
@@ -107,7 +107,7 @@ TEXT
       append_file 'app.json' do <<-TEXT
     "ADMIN_EMAIL": {
       "description": "The administrator's email address for signing in.",
-      "value": "user@example.com",
+      "value": "admin@redmintlabs.com",
       "required": true
     },
     "ADMIN_PASSWORD": {

@@ -8,21 +8,21 @@ stage_two do
     dev_email_text = <<-TEXT
   # ActionMailer Config
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
-  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.delivery_method = :letter_opener
   config.action_mailer.raise_delivery_errors = true
   # Send email in development mode?
   config.action_mailer.perform_deliveries = true
 TEXT
     prod_email_text = <<-TEXT
   # ActionMailer Config
-  config.action_mailer.default_url_options = { :host => 'example.com' }
+  config.action_mailer.default_url_options = { :host => 'redmintlabs.com' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = false
 TEXT
     inject_into_file 'config/environments/development.rb', dev_email_text, :after => "config.assets.debug = true"
     inject_into_file 'config/environments/production.rb', prod_email_text, :after => "config.active_support.deprecation = :notify"
-    gsub_file 'config/environments/production.rb', /'example.com'/, 'Rails.application.secrets.domain_name'
+    gsub_file 'config/environments/production.rb', /'redmintlabs.com'/, 'Rails.application.secrets.domain_name'
     ## SMTP_SETTINGS
     email_configuration_text = <<-TEXT
 \n

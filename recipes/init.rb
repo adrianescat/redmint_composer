@@ -18,24 +18,24 @@ stage_three do
       secrets_email = foreman_email = ''
     when 'gmail'
       secrets_email = "  email_provider_username: <%= ENV[\"GMAIL_USERNAME\"] %>\n  email_provider_password: <%= ENV[\"GMAIL_PASSWORD\"] %>"
-      foreman_email = "GMAIL_USERNAME=Your_Username\nGMAIL_PASSWORD=Your_Password\nDOMAIN_NAME=example.com\n"
+      foreman_email = "GMAIL_USERNAME=Your_Username\nGMAIL_PASSWORD=Your_Password\nDOMAIN_NAME=redmintlabs.com\n"
     when 'sendgrid'
       secrets_email = "  email_provider_username: <%= ENV[\"SENDGRID_USERNAME\"] %>\n  email_provider_password: <%= ENV[\"SENDGRID_PASSWORD\"] %>"
-      foreman_email = "SENDGRID_USERNAME=Your_Username\nSENDGRID_PASSWORD=Your_Password\nDOMAIN_NAME=example.com\n"
+      foreman_email = "SENDGRID_USERNAME=Your_Username\nSENDGRID_PASSWORD=Your_Password\nDOMAIN_NAME=redmintlabs.com\n"
     when 'mandrill'
       secrets_email = "  email_provider_username: <%= ENV[\"MANDRILL_USERNAME\"] %>\n  email_provider_apikey: <%= ENV[\"MANDRILL_APIKEY\"] %>"
-      foreman_email = "MANDRILL_USERNAME=Your_Username\nMANDRILL_APIKEY=Your_API_Key\nDOMAIN_NAME=example.com\n"
+      foreman_email = "MANDRILL_USERNAME=Your_Username\nMANDRILL_APIKEY=Your_API_Key\nDOMAIN_NAME=redmintlabs.com\n"
   end
   figaro_email  = foreman_email.gsub('=', ': ')
-  secrets_d_devise = "  admin_name: First User\n  admin_email: user@example.com\n  admin_password: changeme"
+  secrets_d_devise = "  admin_name: First User\n  admin_email: admin@redmintlabs.com\n  admin_password: redmint123"
   secrets_p_devise = "  admin_name: <%= ENV[\"ADMIN_NAME\"] %>\n  admin_email: <%= ENV[\"ADMIN_EMAIL\"] %>\n  admin_password: <%= ENV[\"ADMIN_PASSWORD\"] %>"
-  foreman_devise = "ADMIN_NAME=First User\nADMIN_EMAIL=user@example.com\nADMIN_PASSWORD=changeme\n"
+  foreman_devise = "ADMIN_NAME=First User\nADMIN_EMAIL=admin@redmintlabs.com\nADMIN_PASSWORD=redmint123\n"
   figaro_devise  = foreman_devise.gsub('=', ': ')
   secrets_omniauth = "  omniauth_provider_key: <%= ENV[\"OMNIAUTH_PROVIDER_KEY\"] %>\n  omniauth_provider_secret: <%= ENV[\"OMNIAUTH_PROVIDER_SECRET\"] %>"
   foreman_omniauth = "OMNIAUTH_PROVIDER_KEY=Your_Provider_Key\nOMNIAUTH_PROVIDER_SECRET=Your_Provider_Secret\n"
   figaro_omniauth  = foreman_omniauth.gsub('=', ': ')
   ## EMAIL
-  inject_into_file 'config/secrets.yml', "\n" + "  domain_name: example.com", :after => "development:"
+  inject_into_file 'config/secrets.yml', "\n" + "  domain_name: redmintlabs.com", :after => "development:"
   inject_into_file 'config/secrets.yml', "\n" + "  domain_name: <%= ENV[\"DOMAIN_NAME\"] %>", :after => "production:"
   inject_into_file 'config/secrets.yml', "\n" + secrets_email, :after => "development:"
   unless prefer :email, 'none'
@@ -46,12 +46,12 @@ stage_three do
   end
   ## DEVISE
   if prefer :authentication, 'devise'
-    inject_into_file 'config/secrets.yml', "\n" + '  domain_name: example.com' + " ", :after => "test:"
+    inject_into_file 'config/secrets.yml', "\n" + '  domain_name: redmintlabs.com' + " ", :after => "test:"
     inject_into_file 'config/secrets.yml', "\n" + secrets_d_devise, :after => "development:"
     inject_into_file 'config/secrets.yml', "\n" + secrets_p_devise, :after => "production:"
     append_file '.env', foreman_devise if prefer :local_env_file, 'foreman'
     append_file 'config/application.yml', figaro_devise if prefer :local_env_file, 'figaro'
-    gsub_file 'config/initializers/devise.rb', /'please-change-me-at-config-initializers-devise@example.com'/, "'no-reply@' + Rails.application.secrets.domain_name"
+    gsub_file 'config/initializers/devise.rb', /'please-change-me-at-config-initializers-devise@redmintlabs.com'/, "'no-reply@' + Rails.application.secrets.domain_name"
   end
   ## OMNIAUTH
   if prefer :authentication, 'omniauth'
