@@ -240,8 +240,6 @@ if prefs[:redmint_gems]
   add_gem 'puma', :group => [:development, :production]
   add_gem 'rollbar', '~> 2.4.0', :group => [:development, :production]
   add_gem 'bourbon'
-
-  insert_into_file "app/assets/stylesheets/application.css.scss", "\n@import 'bourbon';\n", :after => "*/\n"
 end
 
 __END__
