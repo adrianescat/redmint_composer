@@ -2,5 +2,9 @@ h1. Redmint Composer
 
 The Redmint Composer gem installs a command line tool to assemble a Rails application from a collection of "recipes." (Based on rails_app_composer gem)
 
-`gem install redmint_composer`
-`redmint_composer new myapp -r core`
+<pre>
+$ rvm use 2.2.2
+$ gem install rails
+$ gem install redmint_composer
+$ redmint_composer new myapp -r core
+</pre>
