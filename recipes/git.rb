@@ -5,7 +5,7 @@
 say_wizard "initialize git"
 prefs[:git] = true unless prefs.has_key? :git
 if prefer :git, true
-  copy_from 'https://raw.github.com/RailsApps/rails-composer/master/files/gitignore.txt', '.gitignore'
+  copy_from 'https://raw.githubusercontent.com/adrianescat/redmint_composer/master/data/gitignore.txt', '.gitignore'
   git :init
   git :add => '-A'
   git :commit => '-qm "redmint_composer: initial commit"'
