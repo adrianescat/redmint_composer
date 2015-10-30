@@ -240,6 +240,7 @@ if prefs[:redmint_gems]
   add_gem 'puma', :group => [:development, :production]
   add_gem 'rollbar', '~> 2.4.0', :group => [:development, :production]
   add_gem 'bourbon'
+  add_gem 'yard'
 end
 
 __END__
