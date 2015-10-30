@@ -1,0 +1,78 @@
+# bundler state
+/.bundle
+/vendor/bundle/
+/vendor/ruby/
+
+# minimal Rails specific artifacts
+db/*.sqlite3
+/db/*.sqlite3-journal
+/log/*
+!/log/.keep
+/tmp/*
+
+# various artifacts
+**.war
+*.rbc
+*.sassc
+.redcar/
+.sass-cache
+/config/config.yml
+/config/database.yml
+/coverage.data
+/coverage/
+/db/*.javadb/
+/db/*.sqlite3
+/doc/api/
+/doc/app/
+/doc/features.html
+/doc/specs.html
+/public/cache
+/public/stylesheets/compiled
+/public/system/*
+/spec/tmp/*
+/cache
+/capybara*
+/capybara-*.html
+/gems
+/specifications
+rerun.txt
+pickle-email-*.html
+.zeus.sock
+
+# scm revert files
+**.orig
+
+# Mac finder artifacts
+.DS_Store
+
+# Netbeans project directory
+/nbproject/
+
+# RubyMine project files
+.idea
+
+# Textmate project files
+/*.tmproj
+
+# vim artifacts
+**.swp
+
+# Environment files that may contain sensitive data
+.env
+.powenv
+
+# Ignore uploads
+/public/uploads
+/public/source_maps
+
+*.sublime*
+
+# Redis for windows
+/redis
+
+dump.rdb
+
+.bundle
+
+# tmp files
+.directory
