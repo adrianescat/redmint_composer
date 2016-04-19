@@ -236,7 +236,7 @@ if prefs[:redmint_gems]
   add_gem 'axlsx_rails'
   add_gem 'letter_opener', :group => [:development]
   add_gem 'foreman', "0.63.0", :group => [:development, :production]
-  add_gem 'stackmint', git: "git@gitlab.redmintlabs.com:redmint/stackmint.git", :group => [:development, :production]
+  add_gem 'stackmint', git: "ssh://git@gitlab.demos.redmintlabs.com:1022/redmint/stackmint.git", :group => [:development, :production]
   add_gem 'puma', :group => [:development, :production]
   add_gem 'rollbar', '~> 2.4.0', :group => [:development, :production]
   add_gem 'bourbon'
